@@ -1,9 +1,8 @@
 class ArtsController < ApplicationController
-
   before_action :set_art, only: [:show, :edit, :update, :destroy]
 
   def index
-    arts = Art.all
+    @arts = Art.all
   end
 
   def show
@@ -21,26 +20,30 @@ class ArtsController < ApplicationController
   def create 
     @art = Art.new(art_params)
     if @art.save 
-      redirect_to art_path 
+      redirect_to arts_path 
     else 
       render :new
     end
   end
 
-  def update 
+  def update
     if @art.update(art_params)
-      redirect_to art_path 
-    else 
+      redirect_to arts_path
+    else
       render :edit
     end
-  end 
+  end
 
   def destroy 
     @art.destroy
-    redirect_to art_path
+    redirect_to arts_path
   end 
 
   private 
+
+    def set_board 
+      @board = Board.find(params[:board_id])
+    end 
 
     def set_art 
       @art = Art.find(params[:id])

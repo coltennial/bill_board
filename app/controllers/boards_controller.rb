@@ -15,6 +15,7 @@ class BoardsController < ApplicationController
   end
 
   def edit
+    render partial: 'form'
   end
 
   def create 
