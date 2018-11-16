@@ -1,2 +1,9 @@
-<h1>Arts#show</h1>
-<p>Find me in app/views/arts/show.html.erb</p>
+<h1><%= @board.name %> - <%= @art.name %></h1>
+
+<p><%= @art.body %></p>
+
+<%= link_to 'Edit Artist', edit_board_art_path([@board, @art]) %>
+
+<%= link_to 'Remove Artist', [@board, @art], method: :delete %>
+
+<%= link_to 'Back To Artists', board_arts_path(@board) %>

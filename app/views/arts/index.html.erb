@@ -1,2 +1,11 @@
-<h1>Arts#index</h1>
-<p>Find me in app/views/arts/index.html.erb</p>
+<h1>Click an Artist To View Songs</h1>
+
+<%= link_to 'Add a new art', new_board_art_path(@board) %>
+
+<ul>
+
+  <% @art.each do |art| %>
+    <li><%= link_to art.name, [@board, art] %></li>
+  <% end %>
+
+</ul>
