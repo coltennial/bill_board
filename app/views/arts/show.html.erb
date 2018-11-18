@@ -1,9 +1,17 @@
-<h1><%= @board.name %> - <%= @art.name %></h1>
+<div class="container center-align">
 
-<p><%= @art.name %></p>
+  <h2 class="black-text blue-grey lighten-2" > <%= @art.name %> </h2>
 
-<%= link_to 'Edit Artist', edit_board_art_path([@board, @art]) %>
+  <div class="large ui four buttons">
 
-<%= link_to 'Remove Artist', [@board, @art], method: :delete %>
+    <%= link_to 'View Songs of this Artist', board_arts_path(@board), class: "circular big green ui button"  %>
 
-<%= link_to 'Back To Artists', board_arts_path(@board) %>
+    <%= link_to 'Edit Artist', edit_board_art_path(@board), class: "circular big pink ui button" %>
+
+    <%= link_to 'Remove Artist', art_path(@art), method: :delete, class: "circular big ui inverted red button" %>
+
+    <%= link_to 'Back To Artists', board_arts_path(@board), class: " circular big ui primary button"  %>
+
+  </div>
+
+</div>

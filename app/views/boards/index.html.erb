@@ -1,7 +1,15 @@
-<h1>Click a Board To View Artists</h1>
-<%= link_to 'Create your board of top Artists and their songs', new_board_path %>
+<h1 class="card-panel purple lighten-1">Click a Board To View Artists</h1>
+
+<div class= "purple darken-3">
+  <%= link_to 'Create your board of top Artists and their songs', new_board_path %>
+</div>
+
+
 <ul>
+
   <% @boards.each do |board| %>
+
     <li> <%= link_to board.name, board %></li>
+
   <% end %>
 </ul>

@@ -1,11 +1,12 @@
-<h1>Click an Artist To View Songs</h1>
+<h1><%= @board.name %>'s Artist's </h1>
 
-<%= link_to 'Add an Artist', new_board_art_path(@board) %>
+<%= link_to "Add Artist", new_board_art_path(@board), class: "ui button" %>
 
 <ul>
-
   <% @arts.each do |t| %>
-    <li><%= link_to t.name, board_art_path(@board, t) %></li>
+    <li><%= link_to t.name, board_art_path(@board, t), class: "ui button" %></li>
   <% end %>
-
 </ul>
+
+<%= link_to "Back", board_path(@board), class: "ui button" %>
+

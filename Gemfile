@@ -16,6 +16,7 @@ gem 'semantic-ui-sass'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
+  gem 'faker'
 end
 
 group :development do
